@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            background: linear-gradient(45deg,#FF0000,#FF7F00,#FFFF00,#d0ff00,#FFFF00,#FF7F00,#FF0000);
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Playfair Display";
+  letter-spacing: 5px;
+  background: linear-gradient(45deg,#FF0000,#FF7F00,#FFFF00,#00FF00,#0000FF,#4B0082,#8B00FF);
+}
+   </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Đăng nhập</title>
+    <a href="http://127.0.0.1:5500/SPCK.html" class="w3-bar-item w3-button">Quay lại</a>
+    <style>
+ *{
+    font-size: 20px;
+ }
+    </style>
+</head>
+<body>
+<h2>Nếu bạn đã là thành viên thì bạn hãy đăng nhập!</h2>
+    
+    <h1>Đăng nhập</h1>
+    <label>Tài khoản:</label> <input id="lg-tk"> <br/>
+    <label>Mật khẩu:</label> <input id="lg-mk" type="password"> <br/>
+    <button id="nutdangnhap" onclick="chucnang_dangnhap()">Đăng nhập</button>
+</body>
+<script>
+
+    function chucnang_dangnhap() {
+        var ndtk = document.getElementById("lg-tk").value;
+        var ndmk = document.getElementById("lg-mk").value;
+        var tk_timduoc = localStorage.getItem("tk_" + ndtk);
+        
+        if (tk_timduoc==null) {
+            alert ("Tài khoản bạn đăng nhập không tồn tại! Vui lòng đăng kí trước!");
+        } else {
+            var obj_tk = JSON.parse(tk_timduoc);
+            if (ndmk==obj_tk.password) {
+                alert ("Đăng nhập thành công!");
+            } else {
+                alert ("Mật khẩu không trùng khớp...vui lòng nhập lại mật khẩu!");
+            }
+        }
+    }
+</script>
+</html>

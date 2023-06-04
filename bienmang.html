@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+ *{
+    font-size: 20px;
+ }
+    </style>
+</head>
+<body>
+    <div>Tên:<span id="ten_id"></span></div>
+    <div>Tuổi:<span id="sotuoi_id"></span></div>
+    <div>Ngoại hình:</div>
+    <div>Tính cách:</div>
+
+    <label>Tài khoản:</label> <input id="ip-tk"> <br/>
+    <label>Mật khẩu:</label> <input id="ip-mk" type="password"> <br/>
+    <label>Xác nhận lại mật khẩu:</label> <input id="ip-xn" type="password"> <br/>
+    <button id="nutdangki" onclick="cndk()">Đăng kí</button>
+    <br/><br/><br/><br/>
+    <h1>Đăng nhập</h1>
+    <label>Tài khoản:</label> <input id="lg-tk"> <br/>
+    <label>Mật khẩu:</label> <input id="lg-mk" type="password"> <br/>
+    <button id="nutdangnhap" onclick="chucnang_dangnhap()">Đăng nhập</button>
+</body>
+<script>
+    var tuoi = 10 + Math.floor(Math.random()*60);
+    var elm_sotuoi = document.getElementById("sotuoi_id");
+    elm_sotuoi.innerHTML = tuoi.toString();
+
+    var surnames = ["Nguyễn Văn","Lê Hoàng","Nguyễn Thiện","Nguyễn Thái","Hà Cẩm","Trần Gia"];
+    var songaunhienho =  Math.floor(Math.random()*5);
+    
+    var names = ["khanh","phuc","phuc","tuan","dong","m.nguyen","quan"];
+    var songaunhienten =  Math.floor(Math.random()*6);
+    
+    var elm_ten = document.getElementById("ten_id");
+    elm_ten.innerHTML = surnames[songaunhienho] + " " + names[songaunhienten];
+
+    function cndk() {
+        var ndtk = document.getElementById("ip-tk").value;
+        var ndmk = document.getElementById("ip-mk").value;
+        var ndxn = document.getElementById("ip-xn").value;
+
+        if (ndmk==ndxn) {
+            var newObj = {account: ndtk, password:ndmk};
+            var newJSON = JSON.stringify(newObj);
+            localStorage.setItem("tk_"+ndtk,newJSON);
+            alert("Đăng kí thành công!");
+        } else {
+            alert("Mật khẩu không trùng khớp...vui lòng nhập lại!")
+        }
+    }
+    function chucnang_dangnhap() {
+        var ndtk = document.getElementById("lg-tk").value;
+        var ndmk = document.getElementById("lg-mk").value;
+        var tk_timduoc = localStorage.getItem("tk_" + ndtk);
+        
+        if (tk_timduoc==null) {
+            alert ("Tài khoản bạn đăng nhập không tồn tại! Vui lòng đăng kí trước!");
+        } else {
+            var obj_tk = JSON.parse(tk_timduoc);
+            if (ndmk==obj_tk.password) {
+                alert ("Đăng nhập thành công!");
+            } else {
+                alert ("Mật khẩu không trùng khớp...vui lòng nhập lại mật khẩu!");
+            }
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            background: linear-gradient(45deg,#FF0000,#FF7F00,#FFFF00,#d0ff00,#FFFF00,#FF7F00,#FF0000);
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Playfair Display";
+  letter-spacing: 5px;
+  background: linear-gradient(45deg,#FF0000,#FF7F00,#FFFF00,#00FF00,#0000FF,#4B0082,#8B00FF);
+}
+   </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Đăng kí</title>
+    <a href="http://127.0.0.1:5500/SPCK.html" class="w3-bar-item w3-button">Quay lại</a>
+    <style>
+ *{
+    font-size: 20px;
+ }
+    </style>
+</head>
+<body>
+<h2>Nếu bạn muốn trở thành thành viên thì bạn hãy đăng kí!</h2>
+    <label>Tài khoản:</label> <input id="ip-tk"> <br/>
+    <label>Mật khẩu:</label> <input id="ip-mk" type="password"> <br/>
+    <label>Xác nhận lại mật khẩu:</label> <input id="ip-xn" type="password"> <br/>
+    <button id="nutdangki" onclick="cndk()">Đăng kí</button>
+    
+</body>
+<script>
+
+    function cndk() {
+        var ndtk = document.getElementById("ip-tk").value;
+        var ndmk = document.getElementById("ip-mk").value;
+        var ndxn = document.getElementById("ip-xn").value;
+
+        if (ndmk==ndxn) {
+            var newObj = {account: ndtk, password:ndmk};
+            var newJSON = JSON.stringify(newObj);
+            localStorage.setItem("tk_"+ndtk,newJSON);
+            alert("Đăng kí thành công,bây giờ bạn lã là thành viên của trang Web!");
+        } else {
+            alert("Mật khẩu không trùng khớp...vui lòng nhập lại!")
+        }
+    }
+    
+</script>
+</html>

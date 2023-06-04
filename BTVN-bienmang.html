@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+ *{
+    font-size: 20px;
+ }
+    </style>
+</head>
+<body>
+    <label>Họ và tên học sinh:</label> <input id="ip-ths"> <br/>
+    <label>Trường:</label> <input id="ip-t"> <br/>
+    <label>Lớp:</label> <input id="ip-l"> <br/>
+    <label>Tài khoản đăng kí(Họ và tên học sinh như trên):</label> <input id="ip-tk"> <br/>
+    <label>Mật khẩu:</label> <input id="ip-mk" type="password"> <br/>
+    <label>Xác nhận lại mật khẩu(phải trùng khớp với mật khẩu đã đặt ban đầu):</label> <input id="ip-xn" type="password"> <br/>
+    <button id="nutdangki" onclick="cndk()">Đăng kí</button>
+    
+</body>
+<script>
+
+    function cndk() {
+        var ndths = document.getElementById("ip-ths").value;
+        var ndt = document.getElementById("ip-t").value;
+        var ndl = document.getElementById("ip-l").value;
+        var ndtk = document.getElementById("ip-tk").value;
+        var ndmk = document.getElementById("ip-mk").value;
+        var ndxn = document.getElementById("ip-xn").value;
+
+        if (ndmk==ndxn) {
+            var newObj = {account: ndtk, password:ndmk};
+            var newJSON = JSON.stringify(newObj);
+            localStorage.setItem("tk : "+ndtk,newJSON);
+            alert("Đăng kí thành công! Hoàn thành các bước kiểm tra!");
+        } else {
+            alert ("Thông tin đăng kí không trùng khớp...vui lòng kiểm tra và xác nhận lại thông tin đăng kí!")
+            
+        
+        }
+
+
+    }
+</script>
+</html>

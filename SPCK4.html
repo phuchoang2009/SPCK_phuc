@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+
+body {
+  font-family: "Times New Roman", Georgia, Serif;
+  background: linear-gradient(45deg,#FF0000,#FF7F00,#FFFF00,#d0ff00,#FFFF00,#FF7F00,#FF0000);
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Playfair Display";
+  letter-spacing: 5px;
+  background: linear-gradient(45deg,#FF0000,#FF7F00,#FFFF00,#00FF00,#0000FF,#4B0082,#8B00FF);
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+    <a href="#home" class="w3-bar-item w3-button">SPCK.html</a>
+    <!-- Right-sided navbar links. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+      <a href="http://127.0.0.1:5500/ki.html" class="w3-bar-item w3-button">Đăng nhập</a>
+      <a href="http://127.0.0.1:5500/nhap.html" class="w3-bar-item w3-button">Đăng kí</a>
+      <a href="http://127.0.0.1:5500/SPCK4.html" class="w3-bar-item w3-button">Quay lại</a>
+    </div>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="w3-display-container w3-content w3-wide" style="max-width:1600px;min-width:500px" id="home">
+  <img class="w3-image" src="h0.jpg" width="1600" height="800">
+ <h2>Một số khu vui chơi, địa danh, địa điểm du lịch cho mùa hè:</h2>
+</header>
+
+<!-- Page content -->
+<div class="w3-content" style="max-width:1100px">
+
+  <!-- About Section -->
+  <div class="w3-row w3-padding-64" id="about">
+    <div class="w3-col m6 w3-padding-large w3-hide-small">
+     <img src="h7.jpeg" class="w3-round w3-image w3-opacity-min" alt="Table Setting" width="600" height="750">
+    </div>
+
+    <div class="w3-col m6 w3-padding-large">
+      <h1 class="w3-center"> Đảo Phú Quốc</h1><br>
+      <h5 class="w3-center">Được phát hiện vào năm 1671 nhờ Mạc Cửu</h5>
+      <a href="http://127.0.0.1:5500/phuquoc.html" class="w3-bar-item w3-button">Tìm Hiểu Thêm</a>
+      <p class="w3-large w3-text-grey w3-hide-medium">Nếu bạn muốn tìm hiểu thêm về nơi này thì vui lòng ấn "Tìm hiểu thêm".</p>
+    </div>
+  </div>
+  
+  <hr>
+  
+  <!-- Menu Section -->
+  <div class="w3-row w3-padding-64" id="menu">
+    <div class="w3-col l6 w3-padding-large">
+      <h1 class="w3-center">Đà Nẵng</h1><br>
+      <h5 class="w3-center">Thành lập năm 1835</h5>
+      <a href="http://127.0.0.1:5500/danang.html" class="w3-bar-item w3-button">Tìm Hiểu Thêm</a>
+      <p class="w3-large w3-text-grey w3-hide-medium">Nếu bạn muốn tìm hiểu thêm về nơi này thì vui lòng ấn "Tìm hiểu thêm".</p>
+    </div>
+    
+    <div class="w3-col l6 w3-padding-large">
+      <img src="h8.jpeg" class="w3-round w3-image w3-opacity-min" alt="Menu" style="width:100%">
+    </div>
+  </div>
+  <div class="w3-center w3-padding-32">
+    <div class="w3-bar">
+      <a href="http://127.0.0.1:5500/SPCK.html" class="w3-bar-item w3-button w3-hover-black">1</a>
+      <a href="http://127.0.0.1:5500/SPCK2.html" class="w3-bar-item w3-button w3-hover-black">2</a>
+      <a href="http://127.0.0.1:5500/SPCK3.html" class="w3-bar-item w3-button w3-hover-black">3</a>
+      <a href="http://127.0.0.1:5500/SPCK4.html" class="w3-bar-item w3-black w3-button">4</a>
+    </div>
+  </div>
+  <hr>
+
+  <!-- Contact Section -->
+  <div class="w3-container w3-padding-64" id="contact">
+    <h1>Lưu ý:</h1><br>
+    <p>Nội dung trang Web được lấy cảm hứng cá nhân và một vài nội dung được lấy từ các trang, nguồn khác từ trên mạng.</p>
+    <p class="w3-text-blue-grey w3-large"><b>Nơi đặt vé:</b></p>
+    <p>Bạn có thể đi đến những nơi này chơi, tham quan bằng cách mua vé trực tiếp tại nơi đấy hoặc mua vé trực tuyến tại đây:</p>
+    <form action="/action_page.php" target="_blank">
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Tên của bạn" required name="Name"></p>
+      <p><input class="w3-input w3-padding-16" type="number" placeholder="Số lượng vé muốn đặt" required name="People"></p>
+      <p><input class="w3-input w3-padding-16" type="datetime-local" placeholder="Ngày/tháng/năm mà bạn muốn đi" required name="date" value="2020-11-16T20:00"></p>
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Message \ Số điện thoại liên lạc" required name="Message"></p>
+      <p><button class="w3-button w3-light-grey w3-section" type="submit">Mua vé ngay</button></p>
+    </form>
+  </div>
+  
+<!-- End page content -->
+</div>
+
+
+
+</body>
+</html>
